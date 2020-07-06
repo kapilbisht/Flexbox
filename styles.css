@@ -3,7 +3,16 @@ Flexbox uses two types of boxes:
 “flex containers” and “flex items”.
 The job of a flex container is to group a bunch of flex items together and define how they’re positioned.
 */
-
+/*
+    Use display: flex; to create a flex container.
+    Use justify-content to define the horizontal alignment of items.
+    Use align-items to define the vertical alignment of items.
+    Use flex-direction if you need columns instead of rows.
+    Use the row-reverse or column-reverse values to flip item order.
+    Use order to customize the order of individual elements.
+    Use align-self to vertically align individual items.
+    Use flex to create flexible boxes that can stretch and shrink.
+*/
 * {
   margin: 0;
   padding: 0;
@@ -164,5 +173,8 @@ This lets us combine static and flexible boxes in complex ways.
 }
 
 /*
-Flex Items and Auto-Margins 
+Flex Items and Auto-Margins
 */
+.signup{
+  margin-left: auto;
+}
