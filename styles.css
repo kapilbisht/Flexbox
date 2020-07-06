@@ -1,3 +1,9 @@
+/*
+Flexbox uses two types of boxes:
+“flex containers” and “flex items”.
+The job of a flex container is to group a bunch of flex items together and define how they’re positioned.
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -8,9 +14,155 @@
   color: #fff;
   background-color: #5995DA;  /* Blue */
   padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  /*
+  Other values for justify-content are shown below:
+
+  center
+  flex-start
+  flex-end
+  space-around
+  space-between
+  */
 }
 
 .menu {
-  border: 1px solid #fff;  /* For debugging */
   width: 900px;
+  display: flex;
+  justify-content: space-around;
 }
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login {
+  margin-left: 20px;
+}
+/*
+Cross-Axis (vertical) Alignment
+*/
+.header-container {
+  color: #5995DA;
+  background-color: #D6E9FE;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  width: 900px;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/*
+The available options for align-items is similar to justify-content:
+
+center
+flex-start   (top)
+flex-end      (bottom)
+stretch
+baseline
+
+*/
+
+/*
+Photo Grid Container
+*/
+.photo-grid-container {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-grid {
+  width: 900px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.photo-grid-item {
+  border: 1px solid #fff;
+  width: 300px;
+  height: 300px;
+}
+
+/*
+Flex Container Direction
+*/
+/*
+Alignment Considerations
+*/
+/*
+Flex Container Order
+*/
+/*
+Flex Item Order
+*/
+.first-item{
+  order: 1;
+}
+.last-item{
+  order: -1;
+}
+
+/*
+Flex Item Alignment
+*/
+.social,
+.subscribe {
+  align-self: flex-end;
+  margin-bottom: 20px;
+  /*
+  You can align elements in other ways using the same values as the align-items property, listed below for convenience.
+      center
+      flex-start   (top)
+      flex-end      (bottom)
+      stretch
+      baseline
+  */
+}
+
+/*
+-----Flexible Items-----
+Flex items are flexible: they can shrink and stretch to match the width of their containers.
+The flex property defines the width of individual items in a flex container.
+Or, more accurately, it allows them to have flexible widths.
+It works as a weight that tells the flex container how to distribute extra space to each item.
+For example, an item with a flex value of 2 will grow twice as fast as items with the default value of 1.
+*/
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-item {
+  border: 1px solid #fff;
+  background-color: #D6E9FE;
+  height: 200px;
+  flex: 1;
+}
+.footer-three{
+  flex: 2;
+}
+/*
+-----Static Item Widths-----
+We can even mix-and-match flexible boxes with fixed-width ones.
+flex: initial falls back to the item’s explicit width property.
+This lets us combine static and flexible boxes in complex ways.
+*/
+.footer-one,
+.footer-three {
+  background-color: #5995DA;
+  flex: initial;
+  width: 300px;
+}
+
+/*
+Flex Items and Auto-Margins 
+*/
